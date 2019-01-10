@@ -1,0 +1,57 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <id>${project.artifactId}-assembly-${project.version}</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <formats>
+        <format>war</format>
+        <format>dir</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.outputDirectory}</directory>
+            <outputDirectory>WEB-INF/classes</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.basedir}/env/${env}</directory>
+            <outputDirectory>WEB-INF/classes</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources</directory>
+            <outputDirectory>WEB-INF/classes</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.build.outputDirectory}</directory> <!-- target/classes -->
+            <outputDirectory>WEB-INF/classes</outputDirectory>
+            <excludes>
+                <exclude>jdbc.properties</exclude>
+                <exclude>initinterface.properties</exclude>
+            </excludes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.basedir}/env/${env}</directory>
+            <outputDirectory>WEB-INF/classes</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.basedir}/src/main/webapp</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+    <dependencySets>
+        <!-- 将项目依赖的JAR包输出到 WEB-INF/lib -->
+        <dependencySet>
+            <outputDirectory>WEB-INF/lib</outputDirectory>
+            <!--经测试可以不需要-->
+            <!--<excludes>-->
+            <!--<exclude>*.war</exclude>-->
+            <!--</excludes>-->
+            <useProjectArtifact>false</useProjectArtifact>
+        </dependencySet>
+    </dependencySets>
+</assembly>

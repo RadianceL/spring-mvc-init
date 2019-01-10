@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:task="http://www.springframework.org/schema/task"
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <annotation-driven>
+        <message-converters>
+            <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+            <beans:bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <beans:property name="supportedMediaTypes">
+                    <beans:list>
+                        <beans:value><![CDATA[application/json;charset=UTF-8]]></beans:value>
+                    </beans:list>
+                </beans:property>
+            </beans:bean>
+        </message-converters>
+    </annotation-driven>
+
+    <!-- controllers -->
+    <context:component-scan base-package="com.example.controller"/>
+
+    <task:annotation-driven executor="annotationExecutor"/>
+    <!-- 支持 @Async 注解 -->
+    <task:executor id="annotationExecutor" pool-size="10"/>
+
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/dist/"/>
+        <beans:property name="suffix" value=".html"/>
+        <!-- 多View Resolver配置级别 -->
+        <beans:property name="order" value="1"/>
+    </beans:bean>
+
+    <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+    <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <beans:property name="defaultEncoding" value="UTF-8"/>
+        <!-- 指定所上传文件的总大小不能超过200KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+        <beans:property name="maxUploadSize" value="524288000"/>
+    </beans:bean>
+</beans:beans>
