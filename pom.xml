@@ -119,13 +119,6 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- 分页插件 -->
-    <dependency>
-      <groupId>com.github.pagehelper</groupId>
-      <artifactId>pagehelper</artifactId>
-      <version>${pagehelper.version}</version>
-    </dependency>
-
     <!-- 数据库连接池 -->
     <dependency>
       <groupId>com.zaxxer</groupId>
@@ -134,19 +127,19 @@
       <scope>compile</scope>
     </dependency>
 
-    <!-- mybatis -->
     <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-      <version>${mybatis.version}</version>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+      <version>2.1.3.RELEASE</version>
     </dependency>
 
-    <!-- mybatis spring支持包 -->
     <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis-spring</artifactId>
-      <version>${mybatis-spring.version}</version>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>5.2.17.Final</version>
     </dependency>
+
+
 
     <!-- slf4j日志接口 -->
     <!-- Logging -->
@@ -241,10 +234,9 @@
 
     <!-- 单元测试 -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.0.0-beta1</version>
     </dependency>
 
     <!-- servlet 编码期支持 -->

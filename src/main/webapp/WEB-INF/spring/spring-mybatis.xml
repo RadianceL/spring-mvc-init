@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
     http://www.springframework.org/schema/util
-    http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+    http://www.springframework.org/schema/util/spring-util-4.2.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <util:properties id="jdbcConfig" location="classpath:jdbc.properties"></util:properties>
 
@@ -29,21 +30,37 @@
         <property name="maximumPoolSize" value="15"/>
     </bean>
 
-    <!-- mybatis文件配置，扫描所有mapper文件 -->
-    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="classpath:mybatis-config.xml"/>
-        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
-        <property name="dataSource" ref="dataSource"/>
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!--指定JPA扫描的实体类所在的包-->
+        <property name="packagesToScan" value="com.example.entity" />
+        <!-- 指定持久层提供者为Hibernate -->
+        <property name="persistenceProvider">
+            <bean class="org.hibernate.jpa.HibernatePersistenceProvider" />
+        </property>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <!-- 自动建表 -->
+                <property name="generateDdl" value="true" />
+                <property name="database" value="MYSQL" />
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" />
+                <property name="showSql" value="true" />
+            </bean>
+        </property>
+        <!-- 配置使用二级缓存的模式：只允许带有 @Cacheable 的类使用二级缓存 -->
+        <property name="sharedCacheMode" value="ENABLE_SELECTIVE"></property>
+        <property name="jpaDialect">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+        </property>
     </bean>
 
-    <!-- spring与mybatis整合配置，扫描所有dao -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
-          p:basePackage="com.example.dao" p:sqlSessionFactoryBeanName="sessionFactory"/>
 
-    <!-- 对数据源进行事务管理 -->
-    <bean id="transactionManager"
-          class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-          p:dataSource-ref="dataSource"/>
+    <!--指定Spring Data JPA要进行扫描的包,该包中的类框架会自动为其创建代理-->
+    <jpa:repositories base-package="com.example.registry" />
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
 
     <tx:annotation-driven/>
 </beans>
