@@ -19,7 +19,6 @@
 
     <property name="log.level" value="debug"/>
 
-
     <!-- ConsoleAppender 控制台输出日志 -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>

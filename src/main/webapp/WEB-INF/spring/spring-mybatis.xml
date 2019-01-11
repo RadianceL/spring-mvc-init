@@ -12,24 +12,21 @@
 
     <util:properties id="jdbcConfig" location="classpath:jdbc.properties"></util:properties>
 
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
         <property name="driverClassName" value="#{jdbcConfig[driverClassName]}"></property>
-        <property name="url" value="#{jdbcConfig[url]}"></property>
+        <property name="jdbcUrl" value="#{jdbcConfig[url]}"></property>
         <property name="username" value="#{jdbcConfig[username]}"></property>
         <property name="password" value="#{jdbcConfig[password]}"></property>
-        <property name="filters" value="#{jdbcConfig[filters]}"/>
-        <property name="maxActive" value="#{jdbcConfig[maxActive]}"/>
-        <property name="initialSize" value="#{jdbcConfig[initialSize]}"/>
-        <property name="maxWait" value="#{jdbcConfig[maxWait]}"/>
-        <property name="minIdle" value="#{jdbcConfig[minIdle]}"/>
-        <property name="timeBetweenEvictionRunsMillis" value="#{jdbcConfig[timeBetweenEvictionRunsMillis]}"/>
-        <property name="minEvictableIdleTimeMillis" value="#{jdbcConfig[minEvictableIdleTimeMillis]}"/>
-        <property name="validationQuery" value="#{jdbcConfig[validationQuery]}"/>
-        <property name="testWhileIdle" value="#{jdbcConfig[testWhileIdle]}"/>
-        <property name="testOnBorrow" value="#{jdbcConfig[testOnBorrow]}"/>
-        <property name="testOnReturn" value="#{jdbcConfig[testOnReturn]}"/>
-        <property name="maxPoolPreparedStatementPerConnectionSize"
-                  value="#{jdbcConfig[maxPoolPreparedStatementPerConnectionSize]}"/>
+        <!-- 连接只读数据库时配置为true， 保证安全 -->
+        <property name="readOnly" value="false"/>
+        <!-- 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 缺省:30秒 -->
+        <property name="connectionTimeout" value="30000"/>
+        <!-- 一个连接idle状态的最大时长（毫秒），超时则被释放（retired），缺省:10分钟 -->
+        <property name="idleTimeout" value="600000"/>
+        <!-- 一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒，参考MySQL wait_timeout参数（show variables like '%timeout%';） -->
+        <property name="maxLifetime" value="1800000"/>
+        <!-- 连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count) -->
+        <property name="maximumPoolSize" value="15"/>
     </bean>
 
     <!-- mybatis文件配置，扫描所有mapper文件 -->
