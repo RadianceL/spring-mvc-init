@@ -1,0 +1,81 @@
+spring:
+  profiles:
+    active: prod
+  application:
+    name: pingan-pay
+  banner:
+    charset: UTF-8
+    location: classpath:banner.txt
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC
+  datasource:
+    hikari:
+      auto-commit: true
+      minimum-idle: 5
+      maximum-pool-size: 15
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+    # 确认连接池
+    type: com.zaxxer.hikari.HikariDataSource
+    # 数据库驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 字符集
+    sql-script-encoding: UTF-8
+# 安全配置
+jasypt:
+  encryptor:
+    password: RjY2RDgyMzU3NDYxQTQ3NDc2MTt5REQ4ODkxQzB3MDA=
+    property:
+      prefix: "ENC("
+      suffix: ")"
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+
+---
+server:
+  port: 8082
+
+eureka:
+  instance:
+    appname: service-customer
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    enabled: false
+
+spring:
+  profiles: dev
+  # 数据源配置 默认
+  datasource:
+    hikari:
+      # 加密后的用户名和密码
+      username: *
+      password: *
+    # 数据库链接地址
+    url: *
+
+---
+server:
+  port: 8082
+
+eureka:
+  instance:
+    appname: service-customer
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    enabled: false
+
+spring:
+  profiles: prod
+  # 数据源配置 默认
+  datasource:
+    hikari:
+      username: *
+      password: *
+    # 数据库链接地址
+    url: *

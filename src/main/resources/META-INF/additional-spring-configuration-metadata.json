@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "authentication.security",
+      "type": "com.example.configuration.ApplicationCoreConfiguration",
+      "sourceType": "com.example.configuration.ApplicationCoreConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value",
+      "type": "java.lang.String",
+      "description": "字段名称.",
+      "sourceType": "com.example.configuration.ApplicationCoreConfiguration",
+      "defaultValue": "123"
+    }
+  ]
+}
