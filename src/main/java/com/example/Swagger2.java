@@ -30,7 +30,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.thinkerjet.interfaces"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -43,10 +43,10 @@ public class Swagger2 {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("乐薪Restful APIs接口文档")
-                .description("更多请关注辽宁便利电科技有限公司")
+                .title("Restful APIs接口文档")
+                .description("更多请关注")
                 .termsOfServiceUrl("http://www.baidu.com")
-                .contact(new Contact("李映时", "", "liyingshi@bld365.com"))
+                .contact(new Contact("李映时", "", "931305033@qq.com"))
                 .version("1.0")
                 .build();
     }
