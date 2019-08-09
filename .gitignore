@@ -2,3 +2,5 @@
 .idea/
 cloud-platform.iml
 /target/
+*/*.iml
+*.iml
