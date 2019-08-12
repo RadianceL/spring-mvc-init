@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    hikari:
+      username: ENC(2W4KOuK9M0+NVj//ImFK5ON+KEVquexg)
+      password: ENC(DUnsZiececSVj887XG25EKcE6n8mEKYAnvDMX8sBZN0=)
+    url: jdbc:mysql://49.4.5.108:3306/lexin?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=GMT%2B8

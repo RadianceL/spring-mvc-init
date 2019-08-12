@@ -1,0 +1,52 @@
+server:
+  max-http-header-size: 20480
+  port: 8084
+  tomcat:
+    max-http-post-size: -1
+spring:
+  profiles:
+    active: dev
+  application:
+    name: router
+  banner:
+    charset: UTF-8
+    location: classpath:banner.txt
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    hikari:
+      auto-commit: true
+      minimum-idle: 5
+      maximum-pool-size: 15
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    sql-script-encoding: UTF-8
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+jasypt:
+  encryptor:
+    password: RjY2RDgyMzU3NDYxQTQ3NDc2MTQ5REQ4ODkxQzB3MDA=
+    property:
+      prefix: "ENC("
+      suffix: ")"
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: shutdown
+      base-path: /
