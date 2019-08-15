@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.user.repository.UserRepository">
+
+	<!-- 插入用户注册信息 -->
+    <insert id="insertUserRegisterInfo" parameterType="com.example.entity.user.TbUsrUserDTO">
+		INSERT
+			INTO
+				TB_USR_USER
+       		(USER_CODE, USER_PHONE, USER_ALIAS)
+		values
+			(
+				#{userCode},
+				#{userPhone},
+				#{userAlias}
+			)
+	</insert>
+
+</mapper>

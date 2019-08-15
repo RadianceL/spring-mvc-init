@@ -1,4 +1,4 @@
-package com.example.im;
+package com.example.entity;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class WorkerApplicationTests {
+public class XxImApplicationTests {
 
     @Test
     public void contextLoads() {

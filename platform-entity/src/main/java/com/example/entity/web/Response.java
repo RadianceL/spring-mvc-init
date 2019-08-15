@@ -1,6 +1,6 @@
-package com.example.im.web;
+package com.example.entity.web;
 
-import com.example.im.configuration.ResponseCodeConstants;
+import com.example.entity.configuration.ResponseCodeConstants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

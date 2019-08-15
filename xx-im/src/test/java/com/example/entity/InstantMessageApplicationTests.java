@@ -1,4 +1,4 @@
-package com.example.im;
+package com.example.entity;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

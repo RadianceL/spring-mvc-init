@@ -1,4 +1,4 @@
-package com.example.im.configuration;
+package com.example.entity.configuration;
 
 /**
  * 返回编码常量

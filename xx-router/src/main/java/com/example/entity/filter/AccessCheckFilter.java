@@ -1,4 +1,4 @@
-package com.example.im.filter;
+package com.example.entity.filter;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
