@@ -16,6 +16,7 @@
         <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
         <org.mybatis.spring.boot>2.0.1</org.mybatis.spring.boot>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <spring.alibaba.version>2.1.0.RELEASE</spring.alibaba.version>
         <com.github.ulisesbocchio.jasypt>2.1.0</com.github.ulisesbocchio.jasypt>
     </properties>
 
@@ -33,6 +34,14 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -1,3 +1,16 @@
 spring:
-  profiles:
-    include: 
+  application:
+    name: landscape-user
+  cloud:
+    nacos:
+      discovery:
+        server-addr:
+        enabled: true
+
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
