@@ -5,4 +5,4 @@
  *
  * @author eddie
  */
-package com.example.common.entity;
+package com.landscape.common.entity;

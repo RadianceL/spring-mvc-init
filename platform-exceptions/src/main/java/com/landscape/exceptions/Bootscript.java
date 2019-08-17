@@ -1,4 +1,4 @@
-package com.example.exceptions;
+package com.landscape.exceptions;
 
 /**
  * 2019-08-09

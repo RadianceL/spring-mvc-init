@@ -1,4 +1,4 @@
-package com.example.entity.configuration;
+package com.landscape.entity.configuration;
 
 /**
  * 返回编码常量

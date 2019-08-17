@@ -1,6 +1,6 @@
 package com.landscape.user.repository;
 
-import com.example.entity.user.TbUsrUserDTO;
+import com.landscape.entity.user.TbUsrUserDTO;
 import org.springframework.stereotype.Repository;
 
 /**

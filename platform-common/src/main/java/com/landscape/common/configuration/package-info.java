@@ -6,4 +6,4 @@
  *
  * @author eddie
  */
-package com.example.common.configuration;
+package com.landscape.common.configuration;

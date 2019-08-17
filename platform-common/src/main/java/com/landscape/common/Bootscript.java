@@ -1,4 +1,4 @@
-package com.example.common;
+package com.landscape.common;
 
 /**
  * 启动器

@@ -5,7 +5,7 @@
 <mapper namespace="com.landscape.user.repository.UserRepository">
 
 	<!-- 插入用户注册信息 -->
-    <insert id="insertUserRegisterInfo" parameterType="com.example.entity.user.TbUsrUserDTO">
+    <insert id="insertUserRegisterInfo" parameterType="com.landscape.entity.user.TbUsrUserDTO">
 		INSERT
 			INTO
 				TB_USR_USER

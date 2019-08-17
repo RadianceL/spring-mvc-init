@@ -1,6 +1,6 @@
-package com.example.entity.web;
+package com.landscape.entity.web;
 
-import com.example.entity.configuration.ResponseCodeConstants;
+import com.landscape.entity.configuration.ResponseCodeConstants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

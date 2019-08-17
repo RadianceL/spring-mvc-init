@@ -1,4 +1,4 @@
-package com.example.entity.support;
+package com.landscape.entity.support;
 
 /**
  * 2019-08-10

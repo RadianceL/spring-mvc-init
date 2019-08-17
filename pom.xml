@@ -16,14 +16,15 @@
     </properties>
 
     <modules>
-        <module>platform-logging</module>
         <module>platform-exceptions</module>
         <module>platform-entity</module>
         <module>platform-common-service</module>
         <module>platform-test</module>
-        <module>xx-worker</module>
-        <module>xx-community</module>
-        <module>xx-router</module>
+        <module>landscape-community</module>
+        <module>landscape-im</module>
+        <module>landscape-user</module>
+        <module>landscape-router</module>
+        <module>landscape-worker</module>
     </modules>
 
 </project>

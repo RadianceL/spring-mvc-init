@@ -1,6 +1,6 @@
 package com.landscape.user.service;
 
-import com.example.entity.web.Response;
+import com.landscape.entity.web.Response;
 
 /**
  * 用户登录服务接口
