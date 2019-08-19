@@ -8,4 +8,5 @@ package com.landscape.service.repository;
  */
 public interface SmsRepository {
 
+    int insertSmsMessage();
 }

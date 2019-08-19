@@ -1,6 +1,5 @@
 package com.landscape.service.entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,22 +16,9 @@ import lombok.NoArgsConstructor;
 public class ShortMessageInfo {
 
     /**
-     * 电话号码
+     * 验证码
      */
-    @JSONField(name = "PhoneNumbers")
-    private String phoneNumber;
-
-    /**
-     * 签名名称
-     */
-    @JSONField(name = "SignName")
-    private String signName;
-
-    /**
-     * 模板CODE
-     */
-    @JSONField(name = "TemplateCode")
-    private String templateCode;
+    private String code;
 
 
 }

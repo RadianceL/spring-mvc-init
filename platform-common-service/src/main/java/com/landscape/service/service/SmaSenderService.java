@@ -14,7 +14,7 @@ public interface SmaSenderService {
      * @param captchaType       验证码类型
      * @return
      */
-    boolean sendSMSCaptcha(String phoneNumber, String captchaType);
+    boolean sendSmsCaptcha(String phoneNumber, String captchaType);
 
     /**
      * 校验短信验证码
