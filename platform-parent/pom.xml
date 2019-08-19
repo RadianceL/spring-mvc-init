@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
+    <groupId>com.landspace</groupId>
     <artifactId>platform-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -16,6 +16,7 @@
         <spring.version>5.1.9.RELEASE</spring.version>
         <junit.jupiter.version>5.5.1</junit.jupiter.version>
         <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
+        <alibaba.fastjson.version>1.2.59</alibaba.fastjson.version>
         <org.mybatis.spring.boot>2.0.1</org.mybatis.spring.boot>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <spring.alibaba.version>2.1.0.RELEASE</spring.alibaba.version>
@@ -64,6 +65,12 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter</artifactId>
                 <version>${junit.jupiter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba.fastjson.version}</version>
             </dependency>
 
             <dependency>
