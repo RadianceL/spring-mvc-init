@@ -327,9 +327,8 @@ public class DateUtil {
      * 获得指定日期的后N天
      * @param specifiedDay
      * @return
-     * @throws Exception
      */
-    private static String getSpecifiedDayBefore(String specifiedDay, int amount){
+    private static String getSpecifiedDayBefore(String specifiedDay, int amount) {
         Calendar c = Calendar.getInstance();
         Date dateByStrFormat = getDateByStrFormat(specifiedDay, DATE_PATTERN);
         if (Objects.isNull(dateByStrFormat)){
