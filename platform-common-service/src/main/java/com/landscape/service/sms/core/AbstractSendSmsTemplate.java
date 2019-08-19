@@ -34,8 +34,6 @@ public abstract class AbstractSendSmsTemplate {
         request.setVersion("2017-05-25");
         request.setAction("SendSms");
         valueOfSmsRequest(request);
-
-
         try {
             CommonResponse response = client.getCommonResponse(request);
             if(!Objects.isNull(response) && !Objects.isNull(response.getData())) {
