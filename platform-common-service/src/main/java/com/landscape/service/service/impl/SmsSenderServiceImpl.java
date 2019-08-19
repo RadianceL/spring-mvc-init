@@ -20,6 +20,7 @@ public class SmsSenderServiceImpl implements SmaSenderService {
 
 
     public boolean sendSMSCaptcha(String phoneNumber, String captchaType) {
+
         return false;
     }
 
