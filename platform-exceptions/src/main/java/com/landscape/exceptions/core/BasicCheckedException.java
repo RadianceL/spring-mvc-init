@@ -11,6 +11,7 @@ import org.slf4j.helpers.MessageFormatter;
 @Slf4j
 public class BasicCheckedException extends Exception {
 
+
     public BasicCheckedException() {
         super();
         log.error(this.getMessage());
