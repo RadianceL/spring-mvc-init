@@ -1,6 +1,10 @@
 spring:
+  redis:
+    host: 47.111.177.54
+    port: 6379
   datasource:
     hikari:
-      username:
-      password:
-    url:
+      username: root
+      password: Zhu123456*
+    url:  jdbc:mysql://47.111.177.54:3306/landscape?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=GMT%2B8
+

@@ -1,16 +1,14 @@
 spring:
+  profiles:
+    active: dev
   application:
     name: landscape-user
   cloud:
     nacos:
       discovery:
-        server-addr:
+        server-addr: 47.111.177.54:8848
         enabled: true
-
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
 server:
   port: 8081
-management:
-  endpoints:
-    web:
-      exposure:
-        include: *

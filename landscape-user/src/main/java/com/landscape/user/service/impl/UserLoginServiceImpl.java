@@ -34,10 +34,8 @@ public class UserLoginServiceImpl implements UserLoginService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Response userAccountRegister(String userPhone, String userAlias, String code) {
-
         TbUsrUserDTO tbUsrUserDTO = new TbUsrUserDTO("", userPhone, userAlias);
         userRepository.insertUserRegisterInfo(tbUsrUserDTO);
-
         return null;
     }
 
