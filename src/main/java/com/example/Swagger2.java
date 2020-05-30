@@ -46,7 +46,7 @@ public class Swagger2 {
                 .title("Restful APIs接口文档")
                 .description("更多请关注")
                 .termsOfServiceUrl("http://www.baidu.com")
-                .contact(new Contact("李映时", "", "931305033@qq.com"))
+                .contact(new Contact("Eddie Lee", "", "931305033@qq.com"))
                 .version("1.0")
                 .build();
     }
