@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "lexin")
+@ConfigurationProperties(prefix = "test")
 public class ApplicationCoreConfiguration {
 
     /**
