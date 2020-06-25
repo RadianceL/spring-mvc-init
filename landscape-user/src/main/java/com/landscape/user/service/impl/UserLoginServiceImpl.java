@@ -2,7 +2,6 @@ package com.landscape.user.service.impl;
 
 import com.landscape.entity.user.TbUsrUserDTO;
 import com.landscape.entity.web.Response;
-import com.landscape.user.repository.UserRepository;
 import com.landscape.user.service.UserLoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,14 +27,14 @@ public class UserLoginServiceImpl implements UserLoginService {
      */
     private final ValueOperations<String, Object> valueOperations;
 
-    private final UserRepository userRepository;
+//    private final UserRepository userRepository;
 
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Response userAccountRegister(String userPhone, String userAlias, String code) {
         TbUsrUserDTO tbUsrUserDTO = new TbUsrUserDTO("", userPhone, userAlias);
-        userRepository.insertUserRegisterInfo(tbUsrUserDTO);
+//        userRepository.insertUserRegisterInfo(tbUsrUserDTO);
         return null;
     }
 
