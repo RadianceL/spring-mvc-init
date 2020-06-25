@@ -16,19 +16,19 @@
   <properties>
     <java-version>1.8</java-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <org.springframework-version>5.1.4.RELEASE</org.springframework-version>
-    <mysql.version>8.0.13</mysql.version>
-    <hikari-cp.version>2.7.8</hikari-cp.version>
-    <quartz.vsersion>2.3.0</quartz.vsersion>
+    <org.springframework-version>5.2.7.RELEASE</org.springframework-version>
+    <mysql.version>8.0.20</mysql.version>
+    <hikari-cp.version>2.12.0</hikari-cp.version>
+    <quartz.vsersion>2.3.2</quartz.vsersion>
     <org.slf4j-version>1.7.25</org.slf4j-version>
-    <fastjson-lib.version>1.2.47</fastjson-lib.version>
-    <mybatis.version>3.3.0</mybatis.version>
-    <mybatis-spring.version>1.3.0</mybatis-spring.version>
+    <fastjson-lib.version>1.2.71</fastjson-lib.version>
+    <mybatis.version>3.5.5</mybatis.version>
+    <mybatis-spring.version>2.0.5</mybatis-spring.version>
     <commons-lang.version>2.6</commons-lang.version>
-    <commons-lang3.version>3.1</commons-lang3.version>
+    <commons-lang3.version>3.10</commons-lang3.version>
     <lombok.version>1.18.4</lombok.version>
     <commons-fileupload.version>1.3.3</commons-fileupload.version>
-    <guava.version>18.0</guava.version>
+    <guava.version>29.0-jre</guava.version>
     <pagehelper.version>5.1.4</pagehelper.version>
     <logback.version>1.2.3</logback.version>
   </properties>
