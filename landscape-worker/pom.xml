@@ -5,12 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.example</groupId>
+        <groupId>com.landspace</groupId>
         <artifactId>platform-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../platform-parent</relativePath>
     </parent>
 
-    <artifactId>xx-worker</artifactId>
+    <artifactId>landscape-worker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>

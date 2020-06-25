@@ -5,9 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.example</groupId>
+        <groupId>com.landspace</groupId>
         <artifactId>platform-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../platform-parent</relativePath>
     </parent>
 
     <artifactId>platform-test</artifactId>
