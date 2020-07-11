@@ -1,6 +1,9 @@
 package com.landscape.user.controller;
 
-import com.el.smile.util.TraceLocalUtils;
+import com.el.smile.logger.event.annotation.EventTrace;
+import com.el.smile.logger.event.model.LoggerType;
+import com.el.smile.logger.logger.Slf4jEventLogger;
+import com.el.smile.util.LocalDataUtils;
 import com.landscape.user.repository.TraceIdServiceProvider;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,10 +26,11 @@ public class SmsSenderController {
     private final TraceIdServiceProvider traceIdServiceProvider;
 
     @GetMapping("/test/api")
+    @EventTrace(event = "测试", loggerType = LoggerType.JSON)
     public String test() {
-        log.info(TraceLocalUtils.getTraceId());
+        log.info(LocalDataUtils.getTraceId());
+        LocalDataUtils.setIsSucess(true);
         return traceIdServiceProvider.test();
-
     }
 
 }

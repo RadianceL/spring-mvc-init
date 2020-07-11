@@ -1,5 +1,7 @@
 package com.landscape.user.repository;
 
+import com.el.smile.logger.event.annotation.EventTrace;
+import com.el.smile.logger.event.model.LoggerType;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -17,6 +19,7 @@ public interface TraceIdServiceProvider {
      * @return
      */
     @PostMapping(value = "/provider/test/api")
+    @EventTrace(event = "test - /provider/test/api", loggerType = LoggerType.JSON)
     String test();
 
 }

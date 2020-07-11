@@ -3,6 +3,11 @@ spring:
     active: dev
   application:
     name: landscape-community
+  smile-boot:
+    trace-logger:
+      log-path: relative:log
+      log-file-name: event
+      pattern: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
   cloud:
     nacos:
       discovery:

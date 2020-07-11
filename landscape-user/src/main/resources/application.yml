@@ -1,8 +1,13 @@
 spring:
   profiles:
-    active: dev
+    active: STAGING
   application:
     name: landscape-user
+  smile-boot:
+    trace-logger:
+      log-path: relative:log
+      log-file-name: event
+      pattern: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
   cloud:
     nacos:
       discovery:
