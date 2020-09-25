@@ -1,6 +1,5 @@
-package com.landscape.entity.web;
+package com.landscape.user.data;
 
-import com.landscape.entity.configuration.ResponseCodeConstants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -64,7 +63,7 @@ public class Response {
         );
     }
 
-    public static Response newPagingResponseInstance(List<Map<String, Object>> data, Page pagingMap){
+    public static Response newPagingResponseInstance(List<Map<String, Object>> data, Page<?> pagingMap){
         Response response = new Response();
         response.setResultCode(ResponseCodeConstants.STATE_OK_0000);
         response.setSystemMessage("操作成功");

@@ -1,7 +1,7 @@
 package com.landscape.user.service.impl;
 
-import com.landscape.entity.user.TbUsrUserDTO;
-import com.landscape.entity.web.Response;
+import com.landscape.user.data.Response;
+import com.landscape.user.data.TbUsrUserDTO;
 import com.landscape.user.service.UserLoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

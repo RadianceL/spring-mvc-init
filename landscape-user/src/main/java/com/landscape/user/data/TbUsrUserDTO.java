@@ -1,4 +1,4 @@
-package com.landscape.entity.user;
+package com.landscape.user.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

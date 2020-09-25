@@ -1,7 +1,7 @@
 package com.landscape.user.repository;
 
-import com.landscape.entity.user.TbUsrUserDTO;
-import org.springframework.stereotype.Repository;
+
+import com.landscape.user.data.TbUsrUserDTO;
 
 ///**
 // * 用户数据层

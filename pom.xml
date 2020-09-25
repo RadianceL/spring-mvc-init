@@ -16,10 +16,6 @@
     </properties>
 
     <modules>
-        <module>platform-exceptions</module>
-        <module>platform-entity</module>
-        <module>platform-common-service</module>
-        <module>platform-test</module>
         <module>landscape-community</module>
         <module>landscape-im</module>
         <module>landscape-user</module>

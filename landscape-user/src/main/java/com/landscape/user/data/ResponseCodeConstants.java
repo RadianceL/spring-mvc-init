@@ -1,4 +1,4 @@
-package com.landscape.entity.configuration;
+package com.landscape.user.data;
 
 /**
  * 返回编码常量
