@@ -16,7 +16,7 @@
   <properties>
     <java-version>1.8</java-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <org.springframework-version>5.2.7.RELEASE</org.springframework-version>
+    <org.springframework-version>5.2.21.RELEASE</org.springframework-version>
     <mysql.version>8.0.28</mysql.version>
     <hikari-cp.version>3.4.5</hikari-cp.version>
     <quartz.vsersion>2.3.2</quartz.vsersion>
